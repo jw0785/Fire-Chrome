@@ -1,0 +1,176 @@
+/* colors */
+@media (prefers-color-scheme: light) {
+  :root {
+    --toolbar-bgcolor: #ffffff;
+    --toolbar-color: #474747;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --toolbar-bgcolor: #3c3c3c !important; /* Chrome's dark toolbar color */
+    --toolbar-color: #c7c7c7 !important;   /* Chrome's dark text color */
+  }
+}
+/* drop-down/context/popup menu spacing */
+#contentAreaContextMenu {
+  margin-top: 10px !important;
+  margin-left: 10px !important;
+}
+menupopup:not(.in-menulist) > menuitem, 
+menupopup:not(.in-menulist) > menu {
+  padding-block: 4px !important;
+  min-height: unset !important;
+}
+:root {
+  --arrowpanel-menuitem-padding: 4px 8px !important;
+}
+/* tab styles */
+.tabbrowser-tab .tab-background {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+.tabbrowser-tab[selected="true"] .tab-background {
+  margin-bottom: 8px !important;
+  background-color: var(--toolbar-bgcolor) !important;
+  border-radius: 12px 12px 0 0 !important;
+  box-shadow: 0 8px 0 0 var(--toolbar-bgcolor) !important; /* Fill the gap */
+}
+.tabbrowser-tab[selected="true"] {
+  overflow: visible !important;
+}
+.tabbrowser-tab[selected="true"] .tab-background::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at top left, transparent 12px, var(--toolbar-bgcolor) 12px) !important;
+}
+.tabbrowser-tab[selected="true"] .tab-background::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -12px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at top right, transparent 12px, var(--toolbar-bgcolor) 12px) !important;
+}
+.tab-background{ 
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+/* draw tabs divider */
+.tabbrowser-tab:not([selected]) {
+  border-inline-end: 1px solid !important;
+  border-inline-end-color: var(--toolbarseparator-color) !important;
+  border-image: 0 1 linear-gradient(transparent 35%,var(--toolbarseparator-color) 35%,var(--toolbarseparator-color) 65%,transparent 65%)!important;
+}
+/* Cover adjacent borders with pseudo-elements */
+.tabbrowser-tab:hover::before,
+.tabbrowser-tab[selected]::before {
+  content: "";
+  position: absolute;
+  left: -2px; /* Extend left to cover previous tab's border */
+  top: 35%; /* Match gradient start */
+  bottom: 35%; /* Match gradient end */
+  width: 2px;
+  background: var(--toolbar-bgcolor) !important;
+  z-index: 10 !important;
+}
+.tabbrowser-tab:hover::after,
+.tabbrowser-tab[selected]::after {
+  content: "";
+  position: absolute;
+  right: -1px; /* Cover this tab's own border */
+  top: 35%;
+  bottom: 35%;
+  width: 2px;
+  background: var(--toolbar-bgcolor) !important;
+  z-index: 10 !important;
+}
+.browserContainer > findbar {
+ -moz-box-ordinal-group:0 !important; /*  for 112 and older */
+ order: -1 !important; /* for 113 and newer */
+ border-top: none !important;
+ border-bottom: 1px solid ThreeDShadow !important;
+} 
+/* remove excessive context menu entries */
+#context-navigation,
+#context-sep-navigation,
+#context-viewsource,
+#context-inspect,
+#context-bookmarklink,
+#context-print-selection,
+#context-undo,
+#context-redo,
+#context-sep-redo,
+#context-delete,
+#context-sendimage,
+#context_openANewTab,
+#context_NewTab,
+#context_reloadTab,
+#context_reloadSelectedTabs,
+#context_duplicateTabs, 
+.share-tab-url-item, 
+#context_closeTab, 
+#context_closeTabOptions,
+#context_undoCloseTab,
+#context_selectAllTabs + menuseparator,
+#context_moveTabOptions,
+#context_closeDuplicateTabs,
+#context-copyimage,
+#context-sep-setbackground,
+#context-setDesktopBackground {
+     display: none !important;
+}
+/* remove private browsing indicator */
+.private-browsing-indicator-label{display: none;}
+.private-browsing-indicator-label{display:none !important;}
+.private-browsing-indicator-with-label {
+    display:none !important;
+}
+/* remove titlebar spacer */
+.titlebar-spacer[type="pre-tabs"] {
+  display: none !important;
+}
+/* like #contentAreaContextMenu */
+menupopup > * {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+.menu-iconic,
+.menuitem-iconic {
+    margin-left: -24px !important;
+	overflow: hidden !important;
+}
+menupopup {
+	transition: none !important;
+    animation: none !important;
+    border-top: 7px solid var(--panel-background) !important;
+	border-bottom: 12px solid var(--panel-background) !important;
+}
+menupopup > *:hover {
+    transition: none !important;
+    will-change: auto !important;
+}
+menupopup > *:last-child {
+    padding-bottom: 12px !important;
+}
+/* url bar style */
+#urlbar-background {
+	background-color: var(--toolbox-bgcolor-inactive) !important;
+}
+@-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
+  html {
+    border-radius: 5px !important;
+  }
+}
+#urlbar-background,#urlbar {
+  border-radius: 20px !important;
+}
+#urlbar-searchmode-switcher {
+  border-radius: 14px !important;
+  border-width: 1px !important;
+}
+/* TODO accent color */

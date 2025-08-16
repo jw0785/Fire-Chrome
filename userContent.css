@@ -1,0 +1,32 @@
+/* colors */
+@media (prefers-color-scheme: light) {
+  :root {
+    --toolbar-bgcolor: #ffffff !important;
+    --toolbar-color: #474747 !important;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --toolbar-bgcolor: #3c3c3c !important;
+    --toolbar-color: #c7c7c7 !important;
+  }
+}
+/* remove firefox search bar in blank page */
+@-moz-document url(about:newtab) {
+    .search-inner-wrapper {
+        display: none !important;
+    }
+    body {
+        background: var(--toolbar-bgcolor) !important;
+    }
+}
+@-moz-document url(about:privatebrowsing) {
+    .search-inner-wrapper {
+        display: none !important;
+    }
+    body {
+        background: #3c3c3c !important;
+    }
+}
+
+/* TODO accent color */
