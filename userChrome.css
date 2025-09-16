@@ -166,11 +166,15 @@ menupopup > *:last-child {
     border-radius: 5px !important;
   }
 }
-#urlbar-background,#urlbar {
+.urlbar-background {
   border-radius: 20px !important;
 }
-#urlbar-searchmode-switcher {
+#urlbar-searchmode-switcher,
+.searchmode-switcher-chicklet {
   border-radius: 14px !important;
   border-width: 1px !important;
+}
+.searchmode-switcher-title {
+  margin-left: 10px !important;
 }
 /* TODO accent color */
