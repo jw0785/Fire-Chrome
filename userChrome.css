@@ -162,8 +162,12 @@ menupopup > *:last-child {
 	background-color: var(--toolbox-bgcolor-inactive) !important;
 }
 @-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
-  html {
+  :root {
+    background-color: transparent !important;
+  }
+  body {
     border-radius: 5px !important;
+    overflow: hidden !important;
   }
 }
 .urlbar-background {
