@@ -11,15 +11,16 @@
     --toolbar-color: #c7c7c7 !important;   /* Chrome's dark text color */
   }
 }
-/* drop-down/context/popup menu spacing */
+
+/*** Tighten up drop-down/context/popup menu spacing (8 Sep 2021) ***/
 #contentAreaContextMenu {
-  margin-top: 10px !important;
-  margin-left: 10px !important;
+  margin-top: 10px !important; /* Pushes the menu down */
+  margin-left: 10px !important; /* Pushes the menu to the right */
 }
 menupopup:not(.in-menulist) > menuitem, 
 menupopup:not(.in-menulist) > menu {
-  padding-block: 4px !important;
-  min-height: unset !important;
+  padding-block: 4px !important; /* reduce to 3px, 2px, 1px or 0px as needed */ 
+  min-height: unset !important; /* v92.0 - for padding below 4px */
 }
 :root {
   --arrowpanel-menuitem-padding: 4px 8px !important;
@@ -59,6 +60,35 @@ menupopup:not(.in-menulist) > menu {
 .tab-background{ 
   border-bottom: none !important;
   box-shadow: none !important;
+}
+/* draw tabs divider */
+.tabbrowser-tab:not([selected]) {
+  border-inline-end: 1px solid !important;
+  border-inline-end-color: var(--toolbarseparator-color) !important;
+  border-image: 0 1 linear-gradient(transparent 35%,var(--toolbarseparator-color) 35%,var(--toolbarseparator-color) 65%,transparent 65%)!important;
+}
+/* Cover adjacent borders with pseudo-elements */
+.tabbrowser-tab:hover::before,
+.tabbrowser-tab[selected]::before {
+  content: "";
+  position: absolute;
+  left: -2px; /* Extend left to cover previous tab's border */
+  top: 35%; /* Match your gradient start */
+  bottom: 35%; /* Match your gradient end */
+  width: 2px;
+  background: var(--toolbar-bgcolor) !important;
+  z-index: 10 !important;
+}
+.tabbrowser-tab:hover::after,
+.tabbrowser-tab[selected]::after {
+  content: "";
+  position: absolute;
+  right: -1px; /* Cover this tab's own border */
+  top: 35%;
+  bottom: 35%;
+  width: 2px;
+  background: var(--toolbar-bgcolor) !important;
+  z-index: 10 !important;
 }
 /* tab group label styles */
 tab-group[collapsed] {
@@ -108,35 +138,6 @@ tab-group[collapsed] .tab-group-label-hover-highlight::after {
 }
 tab-group[collapsed] .tab-group-label-container {
   background-color: var(--tab-group-color) !important;
-}
-/* draw tabs divider */
-.tabbrowser-tab:not([selected]) {
-  border-inline-end: 1px solid !important;
-  border-inline-end-color: var(--toolbarseparator-color) !important;
-  border-image: 0 1 linear-gradient(transparent 35%,var(--toolbarseparator-color) 35%,var(--toolbarseparator-color) 65%,transparent 65%)!important;
-}
-/* Cover adjacent borders with pseudo-elements */
-.tabbrowser-tab:hover::before,
-.tabbrowser-tab[selected]::before {
-  content: "";
-  position: absolute;
-  left: -2px; /* Extend left to cover previous tab's border */
-  top: 35%; /* Match gradient start */
-  bottom: 35%; /* Match gradient end */
-  width: 2px;
-  background: var(--toolbar-bgcolor) !important;
-  z-index: 10 !important;
-}
-.tabbrowser-tab:hover::after,
-.tabbrowser-tab[selected]::after {
-  content: "";
-  position: absolute;
-  right: -1px; /* Cover this tab's own border */
-  top: 35%;
-  bottom: 35%;
-  width: 2px;
-  background: var(--toolbar-bgcolor) !important;
-  z-index: 10 !important;
 }
 .browserContainer > findbar {
  -moz-box-ordinal-group:0 !important; /*  for 112 and older */
@@ -211,15 +212,49 @@ menupopup > *:last-child {
 	background-color: var(--toolbox-bgcolor-inactive) !important;
 }
 @-moz-document url("chrome://global/content/pictureinpicture/player.xhtml") {
-  html {
+  :root {
+    background-color: transparent !important;
+  }
+  body {
     border-radius: 5px !important;
+    overflow: hidden !important;
   }
 }
-#urlbar-background,#urlbar {
+.urlbar-background {
   border-radius: 20px !important;
 }
-#urlbar-searchmode-switcher {
+#urlbar-searchmode-switcher,
+.searchmode-switcher-chicklet {
   border-radius: 14px !important;
   border-width: 1px !important;
 }
-/* TODO accent color */
+.searchmode-switcher-title {
+  margin-left: 10px !important;
+}
+/* accent color */
+/* @-moz-document regexp("chrome:\/\/(?!devtools).*"), regexp("about:(?!blank).*"), url("about:blank") {
+  * {
+    --color-accent-primary: #6D6EB9 !important;
+    --color-accent-primary-hover: #6D6EB9 !important;
+    --color-accent-primary-active: #6D6EB9 !important;
+  }
+} */
+/* :root,
+panel,
+dialog,
+window {
+ --lwt-toolbarbutton-icon-fill-attention: #6d6eb2 !important;
+ --button-primary-bgcolor: #6d6eb2 !important;
+ --button-primary-hover-bgcolor: #6d6eb2 !important;
+ --button-primary-active-bgcolor: #6d6eb2 !important;
+ --in-content-primary-button-background: #6d6eb2 !important;
+ --in-content-primary-button-background-hover: #6d6eb2 !important;
+ --in-content-primary-button-background-active: #6d6eb2 !important;
+ --input-border-color: #6d6eb2 !important;
+ --uc-checkbox-checked-bgcolor: #6d6eb2 !important;
+ --checkbox-checked-bgcolor: #6d6eb2 !important;
+ --focus-outline-color: #6d6eb2 !important;
+ --in-content-link-color: #6d6eb2 !important;
+}
+not this way, so it seems
+*/
