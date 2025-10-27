@@ -60,6 +60,55 @@ menupopup:not(.in-menulist) > menu {
   border-bottom: none !important;
   box-shadow: none !important;
 }
+/* tab group label styles */
+tab-group[collapsed] {
+  --tab-group-line-color: transparent !important;
+}
+.tab-group-label {
+  outline: none !important;
+  margin-bottom: 5px !important;
+}
+.tab-group-label-hover-highlight,
+.tab-group-label-hover-highlight:hover {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  z-index: 100 !important;
+}
+.tab-group-label-hover-highlight::before,
+.tab-group-label-hover-highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 12px;
+  height: 12px;
+  z-index: 100 !important;
+}
+.tab-group-label-hover-highlight::before {
+  left: -12px;
+  background: radial-gradient(circle at top left, transparent 12px, var(--tab-group-color-invert) 12px) !important;
+}
+.tab-group-label-hover-highlight::after {
+  right: -12px;
+  background: radial-gradient(circle at top right, transparent 12px, var(--tab-group-color-invert) 12px) !important;
+}
+tab-group[collapsed] .tab-group-label-hover-highlight::before {
+  background: radial-gradient(circle at top left, transparent 12px, var(--tab-group-color) 12px) !important;
+}
+tab-group[collapsed] .tab-group-label-hover-highlight::after {
+  background: radial-gradient(circle at top right, transparent 12px, var(--tab-group-color) 12px) !important;
+}
+.tab-group-label-container {
+  margin-top: 8px !important;
+  margin-bottom: 1px !important;
+  background-color: var(--tab-group-color-invert) !important;
+  border-radius: 8px 8px 0 0 !important;
+  position: relative !important;
+  overflow: visible !important;
+  z-index: 100 !important;
+}
+tab-group[collapsed] .tab-group-label-container {
+  background-color: var(--tab-group-color) !important;
+}
 /* draw tabs divider */
 .tabbrowser-tab:not([selected]) {
   border-inline-end: 1px solid !important;
