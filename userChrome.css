@@ -259,6 +259,15 @@ menupopup > *:last-child {
 .urlbar-background {
   border-radius: 20px !important;
 }
+#identity-permission-box {
+  display: flex !important;
+}
+#tracking-protection-icon-container {
+  display: none !important;
+}
+#identity-icon-box {
+  display: none !important;
+}
 #urlbar-searchmode-switcher,
 .searchmode-switcher-chicklet {
   border-radius: 14px !important;
