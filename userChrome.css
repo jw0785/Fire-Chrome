@@ -262,6 +262,12 @@ menupopup > *:last-child {
 #identity-permission-box {
   display: flex !important;
 }
+#identity-permission-box:hover {
+  border-radius: 14px !important;
+}
+.identity-box-button {
+  border-radius: 14px !important;
+}
 #tracking-protection-icon-container {
   display: none !important;
 }
