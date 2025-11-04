@@ -27,14 +27,14 @@ menupopup:not(.in-menulist) > menu {
 }
 /* tab styles */
 .tabbrowser-tab .tab-background {
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
 }
 .tabbrowser-tab[selected="true"] .tab-background {
-  margin-bottom: 8px !important;
+  margin-bottom: 3px !important;
   background-color: var(--toolbar-bgcolor) !important;
   border-radius: 12px 12px 0 0 !important;
-  box-shadow: 0 8px 0 0 var(--toolbar-bgcolor) !important; /* Fill the gap */
+  box-shadow: 0 3px 0 0 var(--toolbar-bgcolor) !important; /* Fill the gap */
 }
 .tabbrowser-tab[selected="true"] {
   overflow: visible !important;
@@ -62,10 +62,14 @@ menupopup:not(.in-menulist) > menu {
   box-shadow: none !important;
 }
 /* draw tabs divider */
-.tabbrowser-tab:not([selected]) {
-  border-inline-end: 1px solid !important;
-  border-inline-end-color: var(--toolbarseparator-color) !important;
-  border-image: 0 1 linear-gradient(transparent 35%,var(--toolbarseparator-color) 35%,var(--toolbarseparator-color) 65%,transparent 65%)!important;
+.tabbrowser-tab:not([selected])::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 35%;
+  bottom: 35%;
+  width: 1px;
+  background: var(--toolbarseparator-color);
 }
 /* Cover adjacent borders with pseudo-elements */
 .tabbrowser-tab:hover::before,
@@ -96,7 +100,7 @@ tab-group[collapsed] {
 }
 .tab-group-label {
   outline: none !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 0px !important;
 }
 .tab-group-label-hover-highlight,
 .tab-group-label-hover-highlight:hover {
