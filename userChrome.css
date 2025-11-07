@@ -263,6 +263,9 @@ menupopup > *:last-child {
 .urlbar-background {
   border-radius: 20px !important;
 }
+#notification-popup {
+  display: flex !important;
+}
 #identity-permission-box {
   display: flex !important;
 }
