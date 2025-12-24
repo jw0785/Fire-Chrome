@@ -62,3 +62,18 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
 user_pref("signon.rememberSignons", false);
+
+// Disable ML features
+user_pref("browser.ml.enable", false);
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.linkPreview.enabled", false);
+user_pref("extensions.ml.enabled", false);
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
+user_pref("browser.ml.chat.page.footerBadge", false);
+user_pref("browser.ml.chat.page.menuBadge", false);
+user_pref("browser.ml.chat.shortcuts", false);
+user_pref("browser.ml.chat.shortcuts.custom", false);
+user_pref("browser.ml.chat.sidebar", false);
+user_pref("browser.ml.checkForMemory", false);
+user_pref("browser.ml.linkPreview.shift", false);
