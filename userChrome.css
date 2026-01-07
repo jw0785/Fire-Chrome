@@ -295,9 +295,9 @@ menupopup > *:last-child {
   flex-direction: column !important;
 }
 .search-one-offs { order: 0; }
-.urlbarView-row[type="bookmark"] { order: 1 !important; }
-.urlbarView-row[type="history"] { order: 3 !important; }
-.urlbarView-row[type="switchtab"] { order: 2 !important; }
+.urlbarView-row[type="bookmark"] { order: 3 !important; }
+.urlbarView-row[type="history"] { order: 2 !important; }
+.urlbarView-row[type="switchtab"] { order: 1 !important; }
 .urlbarView-row[type="search"] { order: 4 !important; }
 /* accent color */
 /* @-moz-document regexp("chrome:\/\/(?!devtools).*"), regexp("about:(?!blank).*"), url("about:blank") {
