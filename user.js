@@ -13,6 +13,7 @@ user_pref("full-screen-api.transition-duration.leave", "0 0");
 user_pref("full-screen-api.warning.timeout", 0);
 user_pref("mousewheel.min_line_scroll_amount", 6);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("browser.tabs.splitView.enabled", true);
 // Font
 user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.monospace.x-western", "JetBrains Mono");

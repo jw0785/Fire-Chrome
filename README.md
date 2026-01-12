@@ -2,7 +2,9 @@
 Make Firefox look proper
 ## Find profile folder
 under `about:support` click **Open Folder** in row **profile folder**
-## Drop files
+## set up symlink
+use `ln` or `ln.exe` on windows
+### (alternatively)Drop files
 - drop `user.js` in this dir
 - create **chrome** dir if it doesn't exist, drop both css into **chrome**
 ## Before and After
