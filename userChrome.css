@@ -319,7 +319,11 @@ menupopup > *:last-child {
 .urlbarView-row[type="search"] ~ .urlbarView-row[type="search"] ~ .urlbarView-row[type="search"] ~ .urlbarView-row[type="search"] {
   display: none !important;
 }
-
+/* fix search result height */
+.urlbarView-results {
+  overflow: scroll !important;
+  max-height: 70vh !important;
+}
 /* accent color */
 /* @-moz-document regexp("chrome:\/\/(?!devtools).*"), regexp("about:(?!blank).*"), url("about:blank") {
   * {
