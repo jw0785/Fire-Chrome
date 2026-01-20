@@ -43,7 +43,7 @@ user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.display.document_color_use", 1);
 user_pref("browser.search.suggest.enabled.private", true);
-user_pref("browser.urlbar.maxRichResults", 40);
+user_pref("browser.urlbar.maxRichResults", 10000);
 user_pref("browser.urlbar.suggest.bookmark", true);
 user_pref("browser.urlbar.suggest.engines", false);
 user_pref("browser.urlbar.suggest.history", true);
