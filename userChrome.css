@@ -295,10 +295,31 @@ menupopup > *:last-child {
   flex-direction: column !important;
 }
 .search-one-offs { order: 0; }
-.urlbarView-row[type="bookmark"] { order: 3 !important; }
-.urlbarView-row[type="history"] { order: 2 !important; }
 .urlbarView-row[type="switchtab"] { order: 1 !important; }
-.urlbarView-row[type="search"] { order: 4 !important; }
+.urlbarView-row[type="history"] { order: 2 !important; }
+.urlbarView-row[type="adaptive-history"] { order: 3 !important; }
+.urlbarView-row[type="history_serp"] { order: 4 !important; }
+.urlbarView-row[type="bookmark"] { order: 5 !important; }
+.urlbarView-row[type="search"] { order: 6 !important; }
+/* Limit number of results per type*/
+/* tab unlimited, all else are limited to 3*/
+/* how in the world they have so many history! */
+.urlbarView-row[type="history"] ~ .urlbarView-row[type="history"] ~ .urlbarView-row[type="history"] ~ .urlbarView-row[type="history"] {
+  display: none !important;
+}
+.urlbarView-row[type="adaptive-history"] ~ .urlbarView-row[type="adaptive-history"] ~ .urlbarView-row[type="adaptive-history"] ~ .urlbarView-row[type="adaptive-history"] {
+  display: none !important;
+}
+.urlbarView-row[type="history_serp"] ~ .urlbarView-row[type="history_serp"] ~ .urlbarView-row[type="history_serp"] ~ .urlbarView-row[type="history_serp"] {
+  display: none !important;
+}
+.urlbarView-row[type="bookmark"] ~ .urlbarView-row[type="bookmark"] ~ .urlbarView-row[type="bookmark"] ~ .urlbarView-row[type="bookmark"] {
+  display: none !important;
+}
+.urlbarView-row[type="search"] ~ .urlbarView-row[type="search"] ~ .urlbarView-row[type="search"] ~ .urlbarView-row[type="search"] {
+  display: none !important;
+}
+
 /* accent color */
 /* @-moz-document regexp("chrome:\/\/(?!devtools).*"), regexp("about:(?!blank).*"), url("about:blank") {
   * {
