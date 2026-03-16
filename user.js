@@ -25,6 +25,11 @@ user_pref("apz.overscroll.enabled", false);
 user_pref("apz.touch_start_tolerance", "0.2");
 user_pref("browser.touchmode.auto", false);
 user_pref("ui.click_hold_context_menus.delay", 175);
+user_pref("apz.fling_accel_base_mult", "3");
+user_pref("apz.fling_accel_max_pause_interval_ms", 25);
+user_pref("apz.fling_accel_min_fling_velocity", "12");
+user_pref("apz.fling_accel_min_pan_velocity", "2.4");
+user_pref("apz.fling_min_velocity_threshold", "0.25");
 // Hardware acceleration
 user_pref("media.hardware-video-decoding.failed", false);
 // Color management
