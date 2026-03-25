@@ -278,6 +278,9 @@ menupopup > *:last-child {
 #tracking-protection-icon-container {
   display: none !important;
 }
+#trust-icon-container {
+  display: none !important;
+}
 #identity-icon-box {
   display: none !important;
 }
