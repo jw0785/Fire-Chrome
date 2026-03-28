@@ -69,6 +69,10 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
 user_pref("signon.rememberSignons", false);
+// address performance 
+// if project fission is enabled belows should be safe
+user_pref("privacy.resistFingerprinting.reduceTimerPrecision.jitter", false);
+user_pref("privacy.resistFingerprinting.reduceTimerPrecision.microseconds", 0);
 
 // Disable ML features
 user_pref("browser.ml.enable", false);
