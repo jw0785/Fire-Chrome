@@ -19,7 +19,7 @@ user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.monospace.x-western", "JetBrains Mono");
 user_pref("font.name.sans-serif.x-western", "SF Pro Display");
 user_pref("font.name.serif.x-western", "Times New Roman");
-// Touch
+// Touch && precision touchpad
 user_pref("apz.allow_double_tap_zooming", false);
 user_pref("apz.overscroll.enabled", false);
 user_pref("apz.touch_start_tolerance", "0.2");
@@ -29,7 +29,14 @@ user_pref("apz.fling_accel_base_mult", "3");
 user_pref("apz.fling_accel_max_pause_interval_ms", 25);
 user_pref("apz.fling_accel_min_fling_velocity", "12");
 user_pref("apz.fling_accel_min_pan_velocity", "2.4");
-user_pref("apz.fling_min_velocity_threshold", "0.25");
+user_pref("apz.fling_min_velocity_threshold", "0.001");
+// mouse wheel
+user_pref("general.smoothScroll.msdPhysics.enabled", true);
+user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 20);
+user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 10);
+user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 10);
+user_pref("mousewheel.acceleration.start", 2);
+user_pref("mousewheel.acceleration.factor", 2);
 // Hardware acceleration
 user_pref("media.hardware-video-decoding.failed", false);
 // Color management
