@@ -14,6 +14,7 @@ user_pref("full-screen-api.warning.timeout", 0);
 user_pref("mousewheel.min_line_scroll_amount", 6);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.tabs.splitView.enabled", true);
+user_pref("ui.prefersReducedMotion", 0);
 // Font
 user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.monospace.x-western", "JetBrains Mono");
@@ -67,6 +68,7 @@ user_pref("browser.urlbar.suggest.topsites", false);
 user_pref("browser.urlbar.suggest.trending", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.usage.uploadEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("dom.disable_open_during_load", false);
 user_pref("dom.private-attribution.submission.enabled", false);
 user_pref("extensions.openPopupWithoutUserGesture.enabled", true);
@@ -77,6 +79,9 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.predictor.enabled", false);
 user_pref("network.prefetch-next", false);
 user_pref("signon.rememberSignons", false);
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
 // address performance 
 // if project fission is enabled belows should be safe
 user_pref("privacy.resistFingerprinting.reduceTimerPrecision.jitter", false);
