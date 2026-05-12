@@ -86,6 +86,8 @@ user_pref("toolkit.telemetry.archive.enabled", false);
 // if project fission is enabled belows should be safe
 user_pref("privacy.resistFingerprinting.reduceTimerPrecision.jitter", false);
 user_pref("privacy.resistFingerprinting.reduceTimerPrecision.microseconds", 0);
+// questionable security model without securing the network and the os first.
+user_pref("network.trr.mode", 5);
 
 // Disable ML features
 user_pref("browser.ml.enable", false);
