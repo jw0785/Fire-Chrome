@@ -32,12 +32,17 @@ user_pref("apz.fling_accel_min_fling_velocity", "12");
 user_pref("apz.fling_accel_min_pan_velocity", "2.4");
 user_pref("apz.fling_min_velocity_threshold", "0.001");
 // mouse wheel
+// the spring physics seems pretty wrong for this purpose
+// but some patch works is better than nothing
 user_pref("general.smoothScroll.msdPhysics.enabled", true);
-user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 20);
-user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 10);
-user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 10);
-user_pref("mousewheel.acceleration.start", 2);
-user_pref("mousewheel.acceleration.factor", 2);
+user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 1);
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 1);
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaRatio", 1);
+user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 100);
+user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 100);
+user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 100);
+user_pref("mousewheel.acceleration.start", 1);
+user_pref("mousewheel.acceleration.factor", 4);
 // Hardware acceleration
 user_pref("media.hardware-video-decoding.failed", false);
 // Color management
