@@ -15,6 +15,7 @@ user_pref("mousewheel.min_line_scroll_amount", 6);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.tabs.splitView.enabled", true);
 user_pref("ui.prefersReducedMotion", 0);
+user_pref("browser.download.deletePrivate", false);
 // Font
 user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.monospace.x-western", "JetBrains Mono");
