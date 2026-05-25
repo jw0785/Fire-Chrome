@@ -16,6 +16,10 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.tabs.splitView.enabled", true);
 user_pref("ui.prefersReducedMotion", 0);
 user_pref("browser.download.deletePrivate", false);
+user_pref("browser.profiles.enabled", false);
+user_pref("ui.key.menuAccessKeyFocuses", false);
+user_pref("ui.key.menuAccessKey", 0);
+user_pref("accessibility.force_disabled", 1);
 // Font
 user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.monospace.x-western", "JetBrains Mono");
@@ -57,7 +61,6 @@ user_pref("dom.image-lazy-loading.root-margin.top", "10000");
 // Force PiP
 user_pref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
 //Privacy
-user_pref("accessibility.force_disabled", 1);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.discovery.enabled", false);
 user_pref("browser.display.document_color_use", 1);
