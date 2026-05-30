@@ -180,10 +180,10 @@ tab-group[collapsed] {
   }
 }
 .browserContainer > findbar {
- -moz-box-ordinal-group:0 !important; /*  for 112 and older */
- order: -1 !important; /* for 113 and newer */
- border-top: none !important;
- border-bottom: 1px solid ThreeDShadow !important;
+  -moz-box-ordinal-group:0 !important; /*  for 112 and older */
+  order: -1 !important; /* for 113 and newer */
+  border-top: none !important;
+  border-bottom: 1px solid ThreeDShadow !important;
 } 
 /* remove excessive context menu entries */
 #context-navigation,
@@ -216,13 +216,13 @@ tab-group[collapsed] {
 #context-copyimage,
 #context-sep-setbackground,
 #context-setDesktopBackground {
-     display: none !important;
+  display: none !important;
 }
 /* remove private browsing indicator */
 .private-browsing-indicator-label{display: none;}
 .private-browsing-indicator-label{display:none !important;}
 .private-browsing-indicator-with-label {
-    display:none !important;
+  display:none !important;
 }
 /* remove titlebar spacer */
 .titlebar-spacer[type="pre-tabs"] {
@@ -230,26 +230,29 @@ tab-group[collapsed] {
 }
 /* like #contentAreaContextMenu */
 menupopup > * {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
 }
 .menu-iconic,
 .menuitem-iconic {
-    margin-left: -24px !important;
-	overflow: hidden !important;
+  margin-left: -24px !important;
+  overflow: hidden !important;
 }
 menupopup {
 	transition: none !important;
-    animation: none !important;
-    border-top: 7px solid var(--panel-background) !important;
+  animation: none !important;
+  border-top: 7px solid var(--panel-background) !important;
 	border-bottom: 12px solid var(--panel-background) !important;
 }
 menupopup > *:hover {
-    transition: none !important;
-    will-change: auto !important;
+  transition: none !important;
+  will-change: auto !important;
 }
 menupopup > *:last-child {
-    padding-bottom: 12px !important;
+  padding-bottom: 12px !important;
+}
+menupopup > menu::after {
+  margin-right: -22px !important;
 }
 /* url bar style */
 #urlbar-background {
