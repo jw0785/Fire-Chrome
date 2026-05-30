@@ -34,6 +34,9 @@ user_pref("browser.profiles.enabled", false);
 user_pref("ui.key.menuAccessKeyFocuses", false);
 user_pref("ui.key.menuAccessKey", 0);
 user_pref("accessibility.force_disabled", 1);
+// macos
+user_pref("widget.macos.native-anchored-menus", false);
+user_pref("widget.macos.native-context-menus", false);
 // Font
 user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.monospace.x-western", "JetBrains Mono");
@@ -64,6 +67,8 @@ user_pref("mousewheel.acceleration.start", 1);
 user_pref("mousewheel.acceleration.factor", 4);
 // Hardware acceleration
 user_pref("media.hardware-video-decoding.failed", false);
+user_pref("layers.acceleration.force-enabled", true);
+user_pref("layers.force-active", true);
 // Color management
 user_pref("gfx.color_management.mode", 1);
 user_pref("gfx.webrender.all", true);
@@ -107,8 +112,12 @@ user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.archive.enabled", false);
 // address performance 
 // if project fission is enabled belows should be safe
+user_pref("privacy.reduceTimerPrecision", false);
+user_pref("privacy.reduceTimerPrecision.unconditional", false);
 user_pref("privacy.resistFingerprinting.reduceTimerPrecision.jitter", false);
 user_pref("privacy.resistFingerprinting.reduceTimerPrecision.microseconds", 0);
+user_pref("services.sync.prefs.sync.privacy.resistFingerprinting.reduceTimerPrecision.jitter", false);
+user_pref("browser.newtab.preload", false);
 // questionable security model without securing the network and the os first.
 user_pref("network.trr.mode", 5);
 
