@@ -1,13 +1,20 @@
 # Fire Chrome
+
 Make Firefox look proper
 ## Find profile folder
 under `about:support` click **Open Folder** in row **profile folder**
+
 ## set up symlink
+
 use `ln` or `ln.exe` on windows
+
 ### (alternatively)Drop files
+
 - drop `user.js` in this dir
 - create **chrome** dir if it doesn't exist, drop both css into **chrome**
+
 ## Before and After
+
 <table>
     <tr>
         <td width="50%">
@@ -30,3 +37,6 @@ use `ln` or `ln.exe` on windows
         </td>
     </tr>
 </table>
+
+## macos
+`userContent.css` has to be copied to the profile dir, symlink won't take effect. reasons unknown.
