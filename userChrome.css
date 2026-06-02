@@ -238,6 +238,17 @@ menupopup > * {
   margin-left: -24px !important;
   overflow: hidden !important;
 }
+menupopup[needsgutter] :is(menu, menuitem) > .menu-icon {
+  position: absolute;
+  inset-inline-start: 10px !important;
+  margin-inline-start: 0 !important;
+}
+  /* fix nav label */
+menupopup[needsgutter] menuitem.menuitem-with-favicon > :is(.menu-text, .menu-highlightable-text) {
+  margin-inline-start: 24px !important;
+  position: relative !important;
+  top: 1px !important;
+}
 menupopup {
 	transition: none !important;
   animation: none !important;
@@ -253,6 +264,24 @@ menupopup > *:last-child {
 }
 menupopup > menu::after {
   margin-right: -22px !important;
+}
+menuitem {
+  max-height: 22px !important;
+}
+/* menu popup */
+.panel-subview-body {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 12px !important;
+  padding-bottom: 10px !important;
+}
+  /* skip extension menu items */
+.subviewbutton:not([class*="unified-extensions"]) {
+  max-height: 22px !important;
+}
+/* side panel */
+#input {
+  border-radius: 16px !important;
 }
 /* url bar style */
 #urlbar-background {
@@ -336,6 +365,10 @@ menupopup > menu::after {
 .urlbarView-results {
   overflow: scroll !important;
   max-height: 70vh !important;
+}
+/* remove spacer */
+toolbarspring:not(#vertical-spacer) {
+  display: none !important;
 }
 /* accent color */
 /* @-moz-document regexp("chrome:\/\/(?!devtools).*"), regexp("about:(?!blank).*"), url("about:blank") {
