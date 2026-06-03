@@ -395,6 +395,10 @@ menuitem {
   overflow: scroll !important;
   max-height: 70vh !important;
 }
+/* fix url bar background */
+.urlbar:is([focused], [open]) > .urlbar-background, #searchbar:focus-within {
+  background-color: var(--toolbar-bgcolor) !important;
+}
 /* remove spacer */
 toolbarspring:not(#vertical-spacer) {
   display: none !important;
