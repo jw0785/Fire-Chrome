@@ -1,14 +1,21 @@
 /* colors */
+:root {
+  --inactive-titlebar-opacity: 1 !important;
+}
 @media (prefers-color-scheme: light) {
   :root {
-    --toolbar-bgcolor: #ffffff;
-    --toolbar-color: #474747;
+    --toolbar-bgcolor: #ffffff !important;
+    --toolbar-color: #474747 !important;
+    --toolbox-bgcolor-inactive: rgb(222, 227, 232) !important;
+    --toolbox-bgcolor: rgb(214, 226, 251) !important;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --toolbar-bgcolor: #3c3c3c !important; /* Chrome's dark toolbar color */
-    --toolbar-color: #c7c7c7 !important;   /* Chrome's dark text color */
+    --toolbar-bgcolor: #3c3c3c !important;
+    --toolbar-color: #c7c7c7 !important;
+    --toolbox-bgcolor-inactive: rgb(43, 43, 43) !important;
+    --toolbox-bgcolor: rgb(31, 32, 32) !important;
   }
 }
 
@@ -57,6 +64,13 @@ menupopup:not(.in-menulist) > menu {
   height: 12px;
   background: radial-gradient(circle at top right, transparent 12px, var(--toolbar-bgcolor) 12px) !important;
 }
+
+/* Skip left curve if the tab is the first in its container */
+.tabbrowser-tab:first-child[selected="true"] .tab-background::before,
+.tabbrowser-tab:first-of-type[selected="true"] .tab-background::before {
+  display: none !important;
+}
+
 .tab-background{ 
   border-bottom: none !important;
   box-shadow: none !important;
@@ -117,6 +131,13 @@ tab-group[collapsed] {
   height: 12px;
   z-index: 100 !important;
 }
+
+/* Skip curves if the parent element is the first in its container */
+tab-group:first-child .tab-group-label-hover-highlight::before,
+tab-group:first-of-type .tab-group-label-hover-highlight::before {
+  display: none !important;
+}
+
 /* Light theme - use regular colors */
 @media (prefers-color-scheme: light) {
   tab-group[collapsed] .tab-group-label {
@@ -369,6 +390,33 @@ menuitem {
 /* remove spacer */
 toolbarspring:not(#vertical-spacer) {
   display: none !important;
+}
+/* adjust all tab button background color */
+@media (prefers-color-scheme: light) {
+  #alltabs-button {
+    --toolbarbutton-hover-background: rgb(174, 198, 246) !important;
+  }
+  #alltabs-button > .toolbarbutton-badge-stack[consumeanchor="alltabs-button"],
+  .toolbarbutton-badge-stack[consumeanchor="alltabs-button"] {
+    background-color: rgb(237, 243, 253) !important;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  #alltabs-button {
+    --toolbarbutton-hover-background: rgb(71, 71, 71) !important;
+  }
+  #alltabs-button > .toolbarbutton-badge-stack[consumeanchor="alltabs-button"],
+  .toolbarbutton-badge-stack[consumeanchor="alltabs-button"] {
+    background-color: rgb(60, 60, 60) !important;
+  }
+}
+#alltabs-button:hover > .toolbarbutton-badge-stack[consumeanchor="alltabs-button"],
+#alltabs-button[open] > .toolbarbutton-badge-stack[consumeanchor="alltabs-button"] {
+  background-color: var(--toolbarbutton-hover-background) !important;
+}
+/* add toolbar border radius */
+#nav-bar {
+  border-radius: 6px 6px 0 0 !important;
 }
 /* accent color */
 /* @-moz-document regexp("chrome:\/\/(?!devtools).*"), regexp("about:(?!blank).*"), url("about:blank") {
