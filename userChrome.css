@@ -10,6 +10,9 @@
     --toolbox-bgcolor-inactive: rgb(222, 227, 232) !important;
     --toolbox-bgcolor: rgb(214, 226, 251) !important;
     --uc-panel-background: #ffffff !important;
+    --uc-panel-text-color: #000 !important;
+    --us-panel-item-hover-background: #f2f2f2 !important;
+     --tab-hover-background-color: rgb(174, 198, 246) !important;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -19,6 +22,9 @@
     --toolbox-bgcolor-inactive: rgb(43, 43, 43) !important;
     --toolbox-bgcolor: rgb(31, 32, 32) !important;
     --uc-panel-background: #1f1f1f !important;
+    --uc-panel-text-color: #e3e3e3 !important;
+    --us-panel-item-hover-background: #373a3e !important;
+    --tab-hover-background-color: rgb(71, 71, 71) !important;
   }
 }
 
@@ -256,6 +262,7 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
 menupopup > * {
   padding-left: 30px !important;
   padding-right: 30px !important;
+  color: var(--uc-panel-text-color) !important;
 }
 .menu-iconic,
 .menuitem-iconic {
@@ -293,6 +300,9 @@ menupopup > menu::after {
 }
 menuitem {
   max-height: 22px !important;
+}
+menuitem:hover {
+  background-color: var(--us-panel-item-hover-background) !important;
 }
 /* menu popup */
 .panel-subview-body {
