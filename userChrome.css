@@ -263,6 +263,7 @@ menupopup > * {
   padding-left: 30px !important;
   padding-right: 30px !important;
   color: var(--uc-panel-text-color) !important;
+  background-color: var(--uc-panel-background) !important;
 }
 .menu-iconic,
 .menuitem-iconic {
@@ -290,7 +291,10 @@ menupopup {
   border-bottom: 24px solid var(--uc-panel-background) !important;
   background-color: var(--uc-panel-background) !important;
 }
-
+  /* fix dropdown menu color */
+arrowscrollbox[part~="content"] {
+  background: var(--uc-panel-background) !important;
+}
 menupopup > *:hover {
   transition: none !important;
   will-change: auto !important;
