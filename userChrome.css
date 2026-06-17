@@ -3,6 +3,11 @@
   --inactive-titlebar-opacity: 1 !important;
   --panel-background: var(--uc-panel-background) !important;
   --tab-filter: grayscale(1) brightness(1) !important;
+  --toolbar-background-color: var(--toolbar-bgcolor) !important;
+  --panel-background-color: var(--panel-background) !important;
+  --toolbox-background-color: var(--toolbox-bgcolor) !important;
+  --toolbox-background-color-inactive: var(--toolbox-bgcolor-inactive) !important;
+  --tab-background-color-hover: var(--tab-hover-background-color) !important;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -250,7 +255,13 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
 #context_closeDuplicateTabs,
 #context-copyimage,
 #context-sep-setbackground,
-#context-setDesktopBackground {
+#context-setDesktopBackground,
+#context-sendpagetodevice,
+#context-media-eme-separator,
+#context_sendTabToDevice,
+#context_sendTabToDeviceSeparator,
+#context-sendlinktodevice,
+#context-sep-sendlinktodevice {
   display: none !important;
 }
 /* remove private browsing indicator */
