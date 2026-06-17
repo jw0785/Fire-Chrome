@@ -72,6 +72,9 @@ user_pref("layers.force-active", true);
 // Color management
 user_pref("gfx.color_management.mode", 1);
 user_pref("gfx.webrender.all", true);
+user_pref("image.jxl.enabled", true);
+user_pref("gfx.color_management.hdr", true);
+user_pref("gfx.color_management.hdr.force_enabled", true);
 // Lazy loading workaround
 user_pref("dom.image-lazy-loading.root-margin.bottom", "10000");
 user_pref("dom.image-lazy-loading.root-margin.left", "10000");
