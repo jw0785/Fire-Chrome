@@ -9,6 +9,7 @@
   --urlbar-container-height: 46px !important;
   --uc-urlbar-container-height: 46px !important;
   --dimension-4: 2px !important;
+  --tab-block-margin: 0px !important;
   --toolbar-background-color: var(--toolbar-bgcolor) !important;
   --panel-background-color: var(--panel-background) !important;
   --toolbox-background-color: var(--toolbox-bgcolor) !important;
@@ -73,15 +74,19 @@ menupopup:not(.in-menulist) > menu {
   margin-bottom: 6px !important;
 }
 .tabbrowser-tab[selected="true"] .tab-background {
+  background-color: var(--toolbar-bgcolor) !important;
+  border-radius: 12px !important;
+}
+.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) .tab-background {
   margin-bottom: 3px !important;
   background-color: var(--toolbar-bgcolor) !important;
   border-radius: 12px 12px 0 0 !important;
   box-shadow: 0 5px 0 0 var(--toolbar-bgcolor) !important; /* Fill the gap */
 }
-.tabbrowser-tab[selected="true"] {
+.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) {
   overflow: visible !important;
 }
-.tabbrowser-tab[selected="true"] .tab-background::before {
+.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -90,7 +95,7 @@ menupopup:not(.in-menulist) > menu {
   height: 12px;
   background: radial-gradient(circle at top left, transparent 12px, var(--toolbar-bgcolor) 12px) !important;
 }
-.tabbrowser-tab[selected="true"] .tab-background::after {
+.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -101,8 +106,8 @@ menupopup:not(.in-menulist) > menu {
 }
 
 /* Skip left curve if the tab is the first in its container */
-.tabbrowser-tab:first-child[selected="true"] .tab-background::before,
-.tabbrowser-tab:first-of-type[selected="true"] .tab-background::before {
+.tabbrowser-tab:first-child[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::before,
+.tabbrowser-tab:first-of-type[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::before {
   display: none !important;
 }
 
@@ -111,7 +116,7 @@ menupopup:not(.in-menulist) > menu {
   box-shadow: none !important;
 }
 /* draw tabs divider */
-.tabbrowser-tab:not([selected])::after {
+.tabbrowser-tab:not([selected]):not(tab-split-view-wrapper > *)::after {
   content: "";
   position: absolute;
   right: 0;
@@ -121,7 +126,7 @@ menupopup:not(.in-menulist) > menu {
   background: var(--toolbarseparator-color);
 }
 /* Cover adjacent borders with pseudo-elements */
-.tabbrowser-tab:hover::before,
+.tabbrowser-tab:not(tab-split-view-wrapper > *):hover::before,
 .tabbrowser-tab[selected]::before {
   content: "";
   position: absolute;
@@ -132,7 +137,7 @@ menupopup:not(.in-menulist) > menu {
   background: var(--toolbar-bgcolor) !important;
   z-index: 10 !important;
 }
-.tabbrowser-tab:hover::after,
+.tabbrowser-tab:hover:not(tab-split-view-wrapper > *)::after,
 .tabbrowser-tab[selected]::after {
   content: "";
   position: absolute;
