@@ -34,6 +34,7 @@ user_pref("browser.profiles.enabled", false);
 user_pref("ui.key.menuAccessKeyFocuses", false);
 user_pref("ui.key.menuAccessKey", 0);
 user_pref("accessibility.force_disabled", 1);
+// user_pref("ui.textSelectBackground", "#4766cb");
 // macos
 user_pref("widget.macos.native-anchored-menus", false);
 user_pref("widget.macos.native-context-menus", false);

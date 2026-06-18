@@ -14,6 +14,9 @@
   --toolbox-background-color: var(--toolbox-bgcolor) !important;
   --toolbox-background-color-inactive: var(--toolbox-bgcolor-inactive) !important;
   --tab-background-color-hover: var(--tab-hover-background-color) !important;
+  --color-accent-primary-selected: var(--color-accent-attention) !important;
+  /* --color-accent-primary-hover */
+  /* --color-accent-primary-active */
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -25,6 +28,9 @@
     --uc-panel-text-color: #000 !important;
     --us-panel-item-hover-background: #f2f2f2 !important;
     --tab-hover-background-color: rgb(174, 198, 246) !important;
+    --color-accent-primary: #2656c9 !important;
+    --color-accent-attention: #4766cb !important;
+    --text-color-accent-primary-selected:#ffffff  !important;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -37,7 +43,15 @@
     --uc-panel-text-color: #e3e3e3 !important;
     --us-panel-item-hover-background: #373a3e !important;
     --tab-hover-background-color: rgb(71, 71, 71) !important;
+    --color-accent-primary: #aec6f6 !important;
+    --color-accent-attention: #17379d !important;
+    --text-color-accent-primary-selected: #000 !important;
   }
+}
+::selection {
+  background: var(--color-accent-primary) !important;
+  background-color: var(--color-accent-primary) !important;
+  color: var(--text-color-accent-primary-selected) !important;
 }
 
 /*** Tighten up drop-down/context/popup menu spacing (8 Sep 2021) ***/

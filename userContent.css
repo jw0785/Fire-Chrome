@@ -1,15 +1,29 @@
 /* colors */
+:root {
+  --color-accent-primary-selected: var(--color-accent-attention) !important;
+}
 @media (prefers-color-scheme: light) {
   :root {
     --toolbar-bgcolor: #ffffff !important;
     --toolbar-color: #474747 !important;
+    --color-accent-primary: #2656c9 !important;
+    --color-accent-attention: #4766cb !important;
+    --text-color-accent-primary-selected:#ffffff  !important;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --toolbar-bgcolor: #3c3c3c !important;
     --toolbar-color: #c7c7c7 !important;
+    --color-accent-primary: #aec6f6 !important;
+    --color-accent-attention: #17379d !important;
+    --text-color-accent-primary-selected: #000 !important;
   }
+}
+::selection {
+  background: var(--color-accent-primary) !important;
+  background-color: var(--color-accent-primary) !important;
+  color: var(--text-color-accent-primary-selected) !important;
 }
 /* remove firefox search bar in blank page */
 @-moz-document url(about:newtab) {
@@ -28,5 +42,3 @@
         background: #3c3c3c !important;
     }
 }
-
-/* TODO accent color */

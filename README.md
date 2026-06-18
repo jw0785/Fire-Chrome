@@ -40,3 +40,7 @@ use `ln` or `ln.exe` on windows
 
 ## macos
 `userContent.css` has to be copied to the profile dir, symlink won't take effect. reasons unknown.
+
+## author css
+some change are ignored by firefox, we have no choice but to inject author css with *tampermonkey*
+see `./Tampermonekey/*.user.js'
