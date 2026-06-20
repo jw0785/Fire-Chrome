@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FF selection fix
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  parse and highlight English on web pages.
 // @author       jw0785
 // @match        *://*/*
@@ -35,8 +35,31 @@
       color: var(--text-color-accent-primary-selected) !important;
     }
     `;
+    function hasSelectionRule(exclude) {
+        for (const sheet of document.styleSheets) {
+            if (exclude && sheet.ownerNode === exclude) continue;
+            try {
+                for (const rule of sheet.cssRules) {
+                    if (rule.selectorText && rule.selectorText.includes('::selection')) return true;
+                    if (rule.cssRules) {
+                        for (const inner of rule.cssRules) {
+                            if (inner.selectorText && inner.selectorText.includes('::selection')) return true;
+                        }
+                    }
+                }
+            } catch (e) {}
+        }
+        return false;
+    }
+
+    if (hasSelectionRule(null)) return;
+
     const style = document.createElement('style');
     style.type = 'text/css';
     style.textContent = selection_style;
     document.head.appendChild(style);
+
+    setTimeout(() => {
+        if (hasSelectionRule(style)) style.remove();
+    }, 5000);
 })();
