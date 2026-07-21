@@ -140,3 +140,9 @@ user_pref("browser.ml.chat.sidebar", false);
 user_pref("browser.ml.checkForMemory", false);
 user_pref("browser.ml.linkPreview.shift", false);
 user_pref("browser.translations.enable", true); //only enable translation
+
+// TEST mobile config
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.topsites.contile.enabled", false);
