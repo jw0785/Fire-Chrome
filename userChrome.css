@@ -10,12 +10,23 @@
   --uc-urlbar-container-height: 46px !important;
   --dimension-4: 2px !important;
   --tab-block-margin: 0px !important;
+  --tab-margin-block: 0px !important;
+  --tab-border-radius: 12px !important;
+  --tab-outline: none !important;
+  --tab-outline-offset: 0 !important;
+  --tab-background-color-selected: var(--toolbar-bgcolor) !important;
+  --tab-selected-outline-color: transparent !important;
+  --tab-box-shadow-selected: 0 5px 0 0 var(--toolbar-bgcolor) !important;
   --toolbar-background-color: var(--toolbar-bgcolor) !important;
   --panel-background-color: var(--panel-background) !important;
   --toolbox-background-color: var(--toolbox-bgcolor) !important;
   --toolbox-background-color-inactive: var(--toolbox-bgcolor-inactive) !important;
   --tab-background-color-hover: var(--tab-hover-background-color) !important;
   --color-accent-primary-selected: var(--color-accent-attention) !important;
+  --uc-menu-padding: 30px;
+  --uc-menu-icon-gutter: 23px;
+  --uc-menu-icon-inset: 10px;
+  --uc-menu-arrow-inset: 22px;
   /* --color-accent-primary-hover */
   /* --color-accent-primary-active */
 }
@@ -73,20 +84,21 @@ menupopup:not(.in-menulist) > menu {
   margin-top: 6px !important;
   margin-bottom: 6px !important;
 }
-.tabbrowser-tab[selected="true"] .tab-background {
+.tabbrowser-tab[selected] .tab-background {
   background-color: var(--toolbar-bgcolor) !important;
   border-radius: 12px !important;
 }
-.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) .tab-background {
+.tabbrowser-tab[selected]:not(tab-split-view-wrapper > *) .tab-background {
   margin-bottom: 3px !important;
   background-color: var(--toolbar-bgcolor) !important;
   border-radius: 12px 12px 0 0 !important;
   box-shadow: 0 5px 0 0 var(--toolbar-bgcolor) !important; /* Fill the gap */
 }
-.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) {
+.tabbrowser-tab[selected]:not(tab-split-view-wrapper > *) {
+  --tab-border-radius: 12px 12px 0 0 !important;
   overflow: visible !important;
 }
-.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::before {
+.tabbrowser-tab[selected]:not(tab-split-view-wrapper > *) .tab-background::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -95,7 +107,7 @@ menupopup:not(.in-menulist) > menu {
   height: 12px;
   background: radial-gradient(circle at top left, transparent 12px, var(--toolbar-bgcolor) 12px) !important;
 }
-.tabbrowser-tab[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::after {
+.tabbrowser-tab[selected]:not(tab-split-view-wrapper > *) .tab-background::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -106,8 +118,8 @@ menupopup:not(.in-menulist) > menu {
 }
 
 /* Skip left curve if the tab is the first in its container */
-.tabbrowser-tab:first-child[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::before,
-.tabbrowser-tab:first-of-type[selected="true"]:not(tab-split-view-wrapper > *) .tab-background::before {
+.tabbrowser-tab:first-child[selected]:not(tab-split-view-wrapper > *) .tab-background::before,
+.tabbrowser-tab:first-of-type[selected]:not(tab-split-view-wrapper > *) .tab-background::before {
   display: none !important;
 }
 
@@ -128,23 +140,23 @@ menupopup:not(.in-menulist) > menu {
 /* Cover adjacent borders with pseudo-elements */
 .tabbrowser-tab:not(tab-split-view-wrapper > *):hover::before,
 .tabbrowser-tab[selected]::before {
-  content: "";
-  position: absolute;
-  left: -2px; /* Extend left to cover previous tab's border */
-  top: 35%; /* Match your gradient start */
-  bottom: 35%; /* Match your gradient end */
-  width: 2px;
+  content: "" !important;
+  position: absolute !important;
+  left: -2px !important;
+  top: 35% !important;
+  bottom: 35% !important;
+  width: 2px !important;
   background: var(--toolbar-bgcolor) !important;
   z-index: 10 !important;
 }
 .tabbrowser-tab:hover:not(tab-split-view-wrapper > *)::after,
 .tabbrowser-tab[selected]::after {
-  content: "";
-  position: absolute;
-  right: -1px; /* Cover this tab's own border */
-  top: 35%;
-  bottom: 35%;
-  width: 2px;
+  content: "" !important;
+  position: absolute !important;
+  right: -1px !important;
+  top: 35% !important;
+  bottom: 35% !important;
+  width: 2px !important;
   background: var(--toolbar-bgcolor) !important;
   z-index: 10 !important;
 }
@@ -163,6 +175,11 @@ tab-group[collapsed] {
 .tab-group-label {
   outline: none !important;
   margin-bottom: 0px !important;
+  background-color: transparent !important;
+}
+.tab-group-label-container::after,
+.tab-group-line {
+  bottom: 0 !important;
 }
 .tab-group-label-hover-highlight,
 .tab-group-label-hover-highlight:hover {
@@ -188,6 +205,10 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
 
 /* Light theme - use regular colors */
 @media (prefers-color-scheme: light) {
+  tab-group {
+    --tab-group-line-color: var(--tab-group-color) !important;
+    --tab-group-color-pale: var(--tab-group-color) !important;
+  }
   tab-group[collapsed] .tab-group-label {
     background: var(--tab-group-color-invert) !important;
   }
@@ -207,7 +228,7 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
   }
   .tab-group-label-container {
     margin-top: 8px !important;
-    margin-bottom: 1px !important;
+    margin-bottom: 0px !important;
     background-color: var(--tab-group-color) !important;
     border-radius: 8px 8px 0 0 !important;
     position: relative !important;
@@ -221,6 +242,10 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
 
 /* Dark theme - use inverted colors */
 @media (prefers-color-scheme: dark) {
+  tab-group {
+    --tab-group-line-color: var(--tab-group-color-invert) !important;
+    --tab-group-color-pale: var(--tab-group-color-invert) !important;
+  }
   .tab-group-label-hover-highlight::before {
     left: -12px;
     background: radial-gradient(circle at top left, transparent 12px, var(--tab-group-color-invert) 12px) !important;
@@ -237,7 +262,7 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
   }
   .tab-group-label-container {
     margin-top: 8px !important;
-    margin-bottom: 1px !important;
+    margin-bottom: 0px !important;
     background-color: var(--tab-group-color-invert) !important;
     border-radius: 8px 8px 0 0 !important;
     position: relative !important;
@@ -305,24 +330,24 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
 }
 /* like #contentAreaContextMenu */
 menupopup > * {
-  padding-left: 30px !important;
-  padding-right: 30px !important;
+  padding-left: var(--uc-menu-padding) !important;
+  padding-right: var(--uc-menu-padding) !important;
   color: var(--uc-panel-text-color) !important;
   background-color: var(--uc-panel-background) !important;
 }
 .menu-iconic,
 .menuitem-iconic {
-  margin-left: -24px !important;
+  margin-left: calc(-1 * var(--uc-menu-icon-gutter)) !important;
   overflow: hidden !important;
 }
 menupopup[needsgutter] :is(menu, menuitem) > .menu-icon {
   position: absolute;
-  inset-inline-start: 10px !important;
+  inset-inline-start: var(--uc-menu-icon-inset) !important;
   margin-inline-start: 0 !important;
 }
   /* fix nav label */
 menupopup[needsgutter] menuitem.menuitem-with-favicon > :is(.menu-text, .menu-highlightable-text) {
-  margin-inline-start: 24px !important;
+  margin-inline-start: var(--uc-menu-icon-gutter) !important;
   position: relative !important;
   top: 1px !important;
 }
@@ -345,7 +370,7 @@ menupopup > *:hover {
   will-change: auto !important;
 }
 menupopup > menu::after {
-  margin-right: -22px !important;
+  margin-right: calc(-1 * var(--uc-menu-arrow-inset)) !important;
 }
 menuitem {
   max-height: 22px !important;
