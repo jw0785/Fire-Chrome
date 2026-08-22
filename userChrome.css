@@ -181,6 +181,9 @@ tab-group[collapsed] {
 .tab-group-line {
   bottom: 0 !important;
 }
+tab-split-view-wrapper .tab-group-line {
+  transform: translateY(2px) !important;
+}
 .tab-group-label-hover-highlight,
 .tab-group-label-hover-highlight:hover {
   box-shadow: none !important;
