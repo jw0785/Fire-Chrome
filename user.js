@@ -21,6 +21,8 @@ user_pref("browser.newtabpage.activity-stream.feeds.system.topstories", false);
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.widgets.sportsWidget.enabled", false);
+user_pref("browser.urlbar.showSearchTerms.featureGate", false);
+user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("findbar.highlightAll", true);
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
