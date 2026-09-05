@@ -282,6 +282,12 @@ tab-group:first-of-type .tab-group-label-hover-highlight::before {
   border-top: none !important;
   border-bottom: 1px solid ThreeDShadow !important;
 } 
+/* 155 and newer */
+.browserContainer > findbar {
+  grid-area: notificationbox !important;
+  border-top: none !important;
+  border-bottom: 1px solid var(--chrome-content-separator-color, ThreeDShadow) !important;
+}
 /* remove excessive context menu entries */
 #context-navigation,
 #context-sep-navigation,
