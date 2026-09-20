@@ -7,6 +7,7 @@
   --urlbar-height: 34px !important;
   --urlbar-min-height: 34px !important;
   --urlbar-container-height: 46px !important;
+  --urlbar-background-color: var(--uc-url-bar-color) !important;
   --uc-urlbar-container-height: 46px !important;
   --dimension-4: 2px !important;
   --tab-block-margin: 0px !important;
@@ -23,6 +24,7 @@
   --toolbox-background-color-inactive: var(--toolbox-bgcolor-inactive) !important;
   --tab-background-color-hover: var(--tab-hover-background-color) !important;
   --color-accent-primary-selected: var(--color-accent-attention) !important;
+  --button-background-color-muted: var(--uc-button-background-color) !important;
   --uc-menu-padding: 30px;
   --uc-menu-icon-gutter: 23px;
   --uc-menu-icon-inset: 10px;
@@ -36,6 +38,9 @@
     --toolbar-color: #474747 !important;
     --toolbox-bgcolor-inactive: rgb(222, 227, 232) !important;
     --toolbox-bgcolor: rgb(214, 226, 251) !important;
+    --uc-url-bar-color: #eef2f9 !important;
+    --uc-url-bar-color-hover: #e2e6ec !important;
+    --uc-button-background-color: #ffffff !important;
     --uc-panel-background: #ffffff !important;
     --uc-panel-text-color: #000 !important;
     --us-panel-item-hover-background: #f2f2f2 !important;
@@ -51,6 +56,9 @@
     --toolbar-color: #c7c7c7 !important;
     --toolbox-bgcolor-inactive: rgb(43, 43, 43) !important;
     --toolbox-bgcolor: rgb(31, 32, 32) !important;
+    --uc-url-bar-color: #282828 !important;
+    --uc-url-bar-color-hover: #4a4a4a !important;
+    --uc-button-background-color: #3c3c3c !important;
     --uc-panel-background: #1f1f1f !important;
     --uc-panel-text-color: #e3e3e3 !important;
     --us-panel-item-hover-background: #373a3e !important;
@@ -418,6 +426,9 @@ menuitem:hover {
 .urlbar-background {
   border-radius: 20px !important;
 }
+#urlbar:hover .urlbar-background {
+  background-color: var(--uc-url-bar-color-hover) !important;
+}
 .urlbar-container {
   --urlbar-container-height: var(--uc-urlbar-container-height) !important;
 }
@@ -430,8 +441,9 @@ menuitem:hover {
 #identity-permission-box:hover {
   border-radius: 14px !important;
 }
-.identity-box-button {
+#identity-box, .identity-box-button {
   border-radius: 14px !important;
+  background-color: var(--uc-button-background-color);
 }
 #tracking-protection-icon-container {
   display: none !important;
