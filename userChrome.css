@@ -87,6 +87,10 @@ menupopup:not(.in-menulist) > menu {
 :root {
   --arrowpanel-menuitem-padding: 4px 8px !important;
 }
+/* dragable blank space in toolbar */
+.toolbar-items {
+  margin-right: 55px !important;
+}
 /* tab styles */
 .tabbrowser-tab .tab-background {
   margin-top: 6px !important;
