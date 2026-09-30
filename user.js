@@ -36,6 +36,10 @@ user_pref("browser.profiles.enabled", false);
 user_pref("ui.key.menuAccessKeyFocuses", false);
 user_pref("ui.key.menuAccessKey", 0);
 user_pref("accessibility.force_disabled", 1);
+user_pref("browser.aboutaddons.novaThemesPickerEnabled", false);
+user_pref("browser.newtabpage.activity-stream.nova.enabled", false);
+user_pref("browser.nova.enabled", false);
+user_pref("pdfjs.enableNova", false);
 // user_pref("ui.textSelectBackground", "#4766cb");
 // macos
 user_pref("widget.macos.native-anchored-menus", false);
