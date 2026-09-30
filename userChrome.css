@@ -29,6 +29,9 @@
   --uc-menu-icon-gutter: 23px;
   --uc-menu-icon-inset: 10px;
   --uc-menu-arrow-inset: 22px;
+  /* 157 spacing fix */
+  --urlbar-container-padding-block: 6px !important;
+  --tab-margin-block: 6px !important;
   /* --color-accent-primary-hover */
   /* --color-accent-primary-active */
 }
