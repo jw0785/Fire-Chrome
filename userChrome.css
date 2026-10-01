@@ -143,7 +143,8 @@ menupopup:not(.in-menulist) > menu {
   box-shadow: none !important;
 }
 /* draw tabs divider */
-.tabbrowser-tab:not([selected]):not(tab-split-view-wrapper > *)::after {
+.tabbrowser-tab:not([selected]):not(tab-split-view-wrapper > *)::after,
+tab-split-view-wrapper::before {
   content: "";
   position: absolute;
   right: 0;
@@ -154,7 +155,7 @@ menupopup:not(.in-menulist) > menu {
 }
 /* Cover adjacent borders with pseudo-elements */
 .tabbrowser-tab:not(tab-split-view-wrapper > *):hover::before,
-.tabbrowser-tab[selected]::before {
+.tabbrowser-tab[selected]:not(tab-split-view-wrapper > *)::before {
   content: "" !important;
   position: absolute !important;
   left: -2px !important;
@@ -165,7 +166,7 @@ menupopup:not(.in-menulist) > menu {
   z-index: 10 !important;
 }
 .tabbrowser-tab:hover:not(tab-split-view-wrapper > *)::after,
-.tabbrowser-tab[selected]::after {
+.tabbrowser-tab[selected]:not(tab-split-view-wrapper > *)::after {
   content: "" !important;
   position: absolute !important;
   right: -1px !important;
@@ -213,17 +214,34 @@ tab-group[collapsed] {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-#tabbrowser-tabs[orient="horizontal"] tab-split-view-wrapper .tab-group-line {
+#tabbrowser-tabs[orient="horizontal"] tab-split-view-wrapper .tab-group-line,
+tab-group:not([collapsed]) > .tabbrowser-tab:last-of-type .tab-group-line {
   display: none !important;
+}
+tab-group:not([collapsed]) > .tabbrowser-tab:last-of-type::after {
+  content: "" !important;
+  position: absolute !important;
+  top: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: auto !important;
+  height: 2px !important;
+  background: var(--tab-group-line-color) !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
 }
 #tabbrowser-tabs[orient="horizontal"] tab-group:not([collapsed]) > tab-split-view-wrapper::after {
   content: "" !important;
   position: absolute !important;
+  top: auto !important;
   inset-block-end: 0 !important;
   inset-inline: 0 !important;
+  width: auto !important;
   height: 2px !important;
   background-color: var(--tab-group-line-color) !important;
   pointer-events: none !important;
+  z-index: 3 !important;
 }
 .tab-group-label-hover-highlight,
 .tab-group-label-hover-highlight:hover {
