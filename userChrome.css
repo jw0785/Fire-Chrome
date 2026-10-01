@@ -196,8 +196,34 @@ tab-group[collapsed] {
 .tab-group-line {
   bottom: 0 !important;
 }
-tab-split-view-wrapper .tab-group-line {
-  transform: translateY(2px) !important;
+#tabbrowser-tabs[orient="horizontal"] tab-split-view-wrapper {
+  align-items: stretch !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+#tabbrowser-tabs[orient="horizontal"] tab-split-view-wrapper .tabbrowser-tab {
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+#tabbrowser-tabs[orient="horizontal"] tab-split-view-wrapper .tab-background {
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+#tabbrowser-tabs[orient="horizontal"] tab-split-view-wrapper .tab-group-line {
+  display: none !important;
+}
+#tabbrowser-tabs[orient="horizontal"] tab-group:not([collapsed]) > tab-split-view-wrapper::after {
+  content: "" !important;
+  position: absolute !important;
+  inset-block-end: 0 !important;
+  inset-inline: 0 !important;
+  height: 2px !important;
+  background-color: var(--tab-group-line-color) !important;
+  pointer-events: none !important;
 }
 .tab-group-label-hover-highlight,
 .tab-group-label-hover-highlight:hover {
