@@ -152,3 +152,9 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.topsites.contile.enabled", false);
+
+// mitigate forced update staging
+user_pref("app.update.auto", false);
+user_pref("app.update.background.scheduling.enabled", false);
+user_pref("app.update.BITS.enabled", false);
+user_pref("app.update.service.enabled", false);

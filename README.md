@@ -43,4 +43,8 @@ use `ln` or `ln.exe` on windows
 
 ## author css
 some change are ignored by firefox, we have no choice but to inject author css with *tampermonkey*
-see `./Tampermonekey/*.user.js'
+see `./Tampermonekey/*.user.js`,
+anyway, `:selection` breaks alot it's probably not going to work.
+
+## more fix
+[fix ff background staging that causes memory leak](https://gist.github.com/jw0785/acae3efc3ab54f42e523807411367b81)
